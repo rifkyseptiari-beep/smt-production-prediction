@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Data Produksi</title>
+</head>
+<body>
+
+<h2>Edit Data Produksi</h2>
+
+<form method="POST">
+
+Component<br>
+<input type="text" name="component_type" value="{{data[1]}}"><br><br>
+
+Solder Quality<br>
+<input type="text" name="solder_quality" value="{{data[2]}}"><br><br>
+
+AOI Result<br>
+<input type="text" name="aoi_result" value="{{data[3]}}"><br><br>
+
+Reflow Temperature<br>
+<input type="number" name="reflow_temp" value="{{data[4]}}"><br><br>
+
+Conveyor Speed<br>
+<input type="number" step="0.01" name="conveyor_speed" value="{{data[5]}}"><br><br>
+
+Placement Accuracy<br>
+<input type="number" step="0.01" name="placement_accuracy" value="{{data[6]}}"><br><br>
+
+SPI Result<br>
+<input type="text" name="spi_result" value="{{data[7]}}"><br><br>
+
+Label<br>
+
+<select name="label">
+
+    <option {% if data[8]=='Good' %}selected{% endif %}>Good</option>
+    <option {% if data[8]=='Defect' %}selected{% endif %}>Defect</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+Update
+</button>
+
+</form>
+
+<br>
+
+<a href="/production">
+Kembali
+</a>
+
+</body>
+
+<footer class="text-center mt-5 mb-3">
+
+<hr>
+
+<p>
+© 2026 SMT Production Prediction System
+</p>
+
+</footer>
+
+</html>

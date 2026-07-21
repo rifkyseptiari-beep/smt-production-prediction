@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#f5f7fa;
+        }
+
+        .card-result{
+            max-width:650px;
+            margin:auto;
+            margin-top:60px;
+            border:none;
+            border-radius:15px;
+        }
+
+        .icon{
+            font-size:80px;
+        }
+
+        .good{
+            color:#198754;
+        }
+
+        .defect{
+            color:#dc3545;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card shadow card-result">
+
+<div class="card-header bg-primary text-white text-center">
+
+<h3>Hasil Prediksi SMT Production</h3>
+
+</div>
+
+<div class="card-body text-center">
+
+{% if hasil == "Good" %}
+
+<div class="icon good">
+✅
+</div>
+
+<h2 class="text-success">
+
+GOOD PRODUCT
+
+</h2>
+
+<p class="lead">
+
+Produk diprediksi memenuhi standar kualitas produksi.
+
+</p>
+
+<div class="alert alert-success">
+
+Produk layak untuk proses berikutnya.
+
+</div>
+
+{% else %}
+
+<div class="icon defect">
+❌
+</div>
+
+<h2 class="text-danger">
+
+DEFECT PRODUCT
+
+</h2>
+
+<p class="lead">
+
+Produk diprediksi mengalami cacat produksi.
+
+</p>
+
+<div class="alert alert-danger">
+
+Produk memerlukan pemeriksaan atau rework.
+
+</div>
+
+{% endif %}
+
+<hr>
+
+<h4>
+
+Hasil Prediksi :
+
+</h4>
+
+<h1>
+
+<b>{{ hasil }}</b>
+
+</h1>
+
+<hr>
+
+<div class="d-grid gap-2">
+
+<a href="/" class="btn btn-success">
+
+Prediksi Lagi
+
+</a>
+
+<a href="/dashboard" class="btn btn-primary">
+
+Dashboard
+
+</a>
+
+<a href="/history" class="btn btn-warning">
+
+Riwayat Prediksi
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card-footer text-center">
+
+© 2026 SMT Production Prediction System
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

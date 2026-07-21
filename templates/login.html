@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Login Admin | SMT Production</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+body{
+
+margin:0;
+
+padding:0;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-family:Segoe UI;
+
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=80");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.login-card{
+
+width:430px;
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0px 10px 35px rgba(0,0,0,.5);
+
+animation:fadeIn 1s;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.logo{
+
+font-size:70px;
+
+color:#0d6efd;
+
+text-align:center;
+
+}
+
+.title{
+
+font-size:28px;
+
+font-weight:bold;
+
+text-align:center;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:gray;
+
+margin-bottom:20px;
+
+}
+
+.clock{
+
+text-align:center;
+
+font-size:15px;
+
+font-weight:bold;
+
+color:#0d6efd;
+
+margin-bottom:20px;
+
+}
+
+.input-group-text{
+
+background:#0d6efd;
+
+color:white;
+
+}
+
+.btn-login{
+
+width:100%;
+
+font-size:18px;
+
+}
+
+.footer{
+
+margin-top:20px;
+
+text-align:center;
+
+font-size:13px;
+
+color:gray;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+<div class="logo">
+
+<i class="fa-solid fa-microchip"></i>
+
+</div>
+
+<div class="title">
+
+SMT Production
+
+</div>
+
+<div class="subtitle">
+
+Quality Prediction System
+
+</div>
+
+<div class="clock">
+    <span id="clock"></span>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+<form action="/login" method="POST">
+
+<label>
+
+Username
+
+</label>
+
+<div class="input-group mb-3">
+
+<span class="input-group-text">
+
+<i class="fa fa-user"></i>
+
+</span>
+
+<input
+type="text"
+name="username"
+class="form-control"
+placeholder="Masukkan Username"
+required>
+
+</div>
+
+<label>
+
+Password
+
+</label>
+
+<div class="input-group mb-3">
+
+<span class="input-group-text">
+
+<i class="fa fa-lock"></i>
+
+</span>
+
+<input
+type="password"
+id="password"
+name="password"
+class="form-control"
+placeholder="Masukkan Password"
+required>
+
+<button
+class="btn btn-outline-secondary"
+type="button"
+onclick="showPassword()">
+
+<i class="fa fa-eye"></i>
+
+</button>
+
+</div>
+
+<div class="form-check mb-3">
+
+<input
+class="form-check-input"
+type="checkbox">
+
+<label class="form-check-label">
+
+Remember Me
+
+</label>
+
+</div>
+
+<button
+class="btn btn-primary btn-login">
+
+<i class="fa fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+</form>
+
+<div class="footer">
+
+<hr>
+
+© 2026 SMT Production Prediction System
+
+</div>
+
+</div>
+
+<script>
+
+function showPassword(){
+
+var x=document.getElementById("password");
+
+if(x.type==="password"){
+
+x.type="text";
+
+}else{
+
+x.type="password";
+
+}
+
+}
+
+function updateClock(){
+
+const now=new Date();
+
+document.getElementById("clock").innerHTML=
+
+now.toLocaleDateString("id-ID")+" | "+now.toLocaleTimeString("id-ID");
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+</script>
+
+</body>
+
+</html>

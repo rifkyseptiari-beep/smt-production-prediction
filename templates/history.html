@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Riwayat Prediksi</title>
+
+    <style>
+
+      body{
+            font-family:Arial;
+            background:#f5f5f5;
+            margin:40px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th{
+            background:#0d6efd;
+            color:white;
+            padding:10px;
+        }
+
+        td{
+            padding:10px;
+            border:1px solid #ddd;
+            text-align:center;
+        }
+
+        tr:nth-child(even){
+            background:#f2f2f2;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        button{
+            padding:8px 15px;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Riwayat Prediksi SMT Production</h2>
+
+<a href="/export_excel">
+<button>Export Excel</button>
+
+</a>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Component</th>
+
+<th>Solder</th>
+
+<th>AOI</th>
+
+<th>Temp</th>
+
+<th>Speed</th>
+
+<th>Placement</th>
+
+<th>SPI</th>
+
+<th>Prediction</th>
+
+<th>Time</th>
+
+</tr>
+
+{% for row in data %}
+
+<tr>
+
+<td>{{row[0]}}</td>
+
+<td>{{row[1]}}</td>
+
+<td>{{row[2]}}</td>
+
+<td>{{row[3]}}</td>
+
+<td>{{row[4]}}</td>
+
+<td>{{row[5]}}</td>
+
+<td>{{row[6]}}</td>
+
+<td>{{row[7]}}</td>
+
+<td>{{row[8]}}</td>
+
+<td>{{row[9]}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/dashboard">Kembali ke Dashboard</a>
+
+</body>
+
+<footer class="text-center mt-5 mb-3">
+
+<hr>
+
+<p>
+© 2026 SMT Production Prediction System
+</p>
+
+</footer>
+
+</html>

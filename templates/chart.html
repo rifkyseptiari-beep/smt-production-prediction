@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Grafik Prediksi</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h2>Grafik Hasil Prediksi</h2>
+
+<canvas id="myChart"></canvas>
+
+<script>
+
+const ctx=document.getElementById('myChart');
+
+new Chart(ctx,{
+
+type:'bar',
+
+data:{
+
+labels:{{labels|tojson}},
+
+datasets:[{
+
+label:'Jumlah Prediksi',
+
+data:{{values|tojson}}
+
+}]
+
+}
+
+});
+
+</script>
+
+<br>
+
+<a href="/dashboard">
+
+Kembali Dashboard
+
+</a>
+
+</body>
+
+<footer class="text-center mt-5 mb-3">
+
+<hr>
+
+<p>
+© 2026 SMT Production Prediction System
+</p>
+
+</footer>
+
+</html>
