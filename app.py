@@ -19,12 +19,12 @@ import mysql.connector
 import joblib
 import numpy as np
 
-db = mysql.connector.connect(
-    host="HOST_DATABASE",
+db=mysql.connector.connect(
+    host="HOST_RAILWAY",
     user="USERNAME",
     password="PASSWORD",
-    database="smt_production",
-    port=3306
+    database="railway",
+    port=6543
 )
 
 cursor = db.cursor(buffered=True)
